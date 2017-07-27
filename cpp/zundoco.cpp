@@ -44,7 +44,7 @@ void zundoco() {
         u8"ズン", u8"ズン", u8"ズン", u8"ズン", u8"ドコ"
     };
     const std::vector<std::string> finish = {
-        u8"キ・", u8"キ・ヨ・", u8"キ・ヨ・シ！"
+        u8"キ・", u8"ヨ・", u8"シ！"
     };
 
     std::deque<std::string> words(expected.size());
@@ -64,7 +64,7 @@ void zundoco() {
             }
 
             for (const auto& word : finish) {
-                std::cout << word << "\r" << std::flush;
+                std::cout << word << std::flush;
                 sleep(std::chrono::milliseconds(300));
             }
 

@@ -9,7 +9,7 @@ import sys
 def zundoco():
     choice = ['ズン', 'ドコ']
     expected = ['ズン', 'ズン', 'ズン', 'ズン', 'ドコ']
-    finish = ['キ・', 'キ・ヨ・', 'キ・ヨ・シ！']
+    finish = ['キ・', 'ヨ・', 'シ！']
 
     words = [random.choice(choice)] * len(expected)
 
@@ -18,19 +18,19 @@ def zundoco():
             seconds = 1.2
 
             for word in words:
-                sys.stdout.write(word + '\n')
+                print(word)
                 time.sleep(seconds)
                 seconds = 0.6
 
             for word in finish:
-                sys.stdout.write('\r' + word)
+                print(word, end='', flush=True)
                 time.sleep(0.3)
 
-            sys.stdout.write('\n')
+            print()
 
             return
 
-        sys.stdout.write(words[0] + '\n')
+        print(words[0])
 
         words = words[1:] + [random.choice(choice)]
 
