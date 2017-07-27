@@ -20,7 +20,7 @@ def zundoco():
             for word in words:
                 sys.stdout.write(word + '\n')
                 time.sleep(seconds)
-                seconds = 0.7
+                seconds = 0.6
 
             for word in finish:
                 sys.stdout.write('\r' + word)
