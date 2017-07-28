@@ -13,26 +13,24 @@ def zundoco():
 
     words = [random.choice(choice)] * len(expected)
 
-    while True:
-        if words == expected:
-            seconds = 1.0
-
-            for word in words:
-                print(word)
-                time.sleep(seconds)
-                seconds = 0.5
-
-            for word in finish:
-                print(word, end='', flush=True)
-                time.sleep(0.3)
-
-            print()
-
-            return
-
+    while words != expected:
         print(words[0])
-
         words = words[1:] + [random.choice(choice)]
+
+    seconds = 1.0
+
+    for word in words:
+        print(word)
+        time.sleep(seconds)
+        seconds = 0.5
+
+    for word in finish:
+        print(word, end='', flush=True)
+        time.sleep(0.3)
+
+    print()
+
+    return
 
 
 def main():

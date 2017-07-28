@@ -53,31 +53,29 @@ void zundoco() {
         word = choice(choices);
     }
 
-    while (true) {
-        if (std::equal(words.begin(), words.end(), expected.begin())) {
-            auto milliseconds = std::chrono::milliseconds(1000);
-
-            for (const auto& word : words) {
-                std::cout << word << std::endl;
-                sleep(milliseconds);
-                milliseconds = std::chrono::milliseconds(500);
-            }
-
-            for (const auto& word : finish) {
-                std::cout << word << std::flush;
-                sleep(std::chrono::milliseconds(300));
-            }
-
-            std::cout << std::endl;
-
-            return;
-        }
-
+    while (!std::equal(words.begin(), words.end(), expected.begin())) {
         std::cout << words.front() << std::endl;
 
         words.pop_front();
         words.push_back(choice(choices));
     }
+
+    auto milliseconds = std::chrono::milliseconds(1000);
+
+    for (const auto& word : words) {
+        std::cout << word << std::endl;
+        sleep(milliseconds);
+        milliseconds = std::chrono::milliseconds(500);
+    }
+
+    for (const auto& word : finish) {
+        std::cout << word << std::flush;
+        sleep(std::chrono::milliseconds(300));
+    }
+
+    std::cout << std::endl;
+
+    return;
 }
 
 int main() {
