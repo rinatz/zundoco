@@ -15,12 +15,12 @@ def zundoco():
 
     while True:
         if words == expected:
-            seconds = 1.2
+            seconds = 1.0
 
             for word in words:
                 print(word)
                 time.sleep(seconds)
-                seconds = 0.6
+                seconds = 0.5
 
             for word in finish:
                 print(word, end='', flush=True)

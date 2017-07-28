@@ -17,7 +17,7 @@ function sleep(seconds) {
 function zundoco() {
     const choices = ['ズン', 'ドコ'];
     const expected = ['ズン', 'ズン', 'ズン', 'ズン', 'ドコ'];
-    const finish = ['キ・', 'キ・ヨ・', 'キ・ヨ・シ！'];
+    const finish = ['キ・', 'ヨ・', 'シ！'];
 
     let words = [];
 
@@ -27,16 +27,16 @@ function zundoco() {
 
     while (true) {
         if (words.toString() == expected.toString()) {
-            let seconds = 1.2;
+            let seconds = 1.0;
 
             for (let word of words) {
-                process.stdout.write(word + '\n');
+                console.log(word);
                 sleep(seconds);
-                seconds = 0.6;
+                seconds = 0.5;
             }
 
             for (let word of finish) {
-                process.stdout.write('\r' + word);
+                process.stdout.write(word);
                 sleep(0.3);
             }
 

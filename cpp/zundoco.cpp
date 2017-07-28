@@ -55,12 +55,12 @@ void zundoco() {
 
     while (true) {
         if (std::equal(words.begin(), words.end(), expected.begin())) {
-            auto milliseconds = std::chrono::milliseconds(1200);
+            auto milliseconds = std::chrono::milliseconds(1000);
 
             for (const auto& word : words) {
                 std::cout << word << std::endl;
                 sleep(milliseconds);
-                milliseconds = std::chrono::milliseconds(600);
+                milliseconds = std::chrono::milliseconds(500);
             }
 
             for (const auto& word : finish) {
